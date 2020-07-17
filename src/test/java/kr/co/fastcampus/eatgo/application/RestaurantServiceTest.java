@@ -115,6 +115,7 @@ class RestaurantServiceTest {
 		//then
 		assertThat(restaurant.getId()).isEqualTo(1004);
 		assertThat(menuItems.get(0).getName()).isEqualTo("GukBab");
+		//		asserTaht();
 	}
 	
 	
