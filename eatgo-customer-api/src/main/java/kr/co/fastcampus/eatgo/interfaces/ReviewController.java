@@ -31,8 +31,6 @@ public class ReviewController {
         Claims claims = (Claims) authentication.getPrincipal();
         String name = claims.get("name", String.class);
 
-        System.out.println(name);
-
         Review review = reviewService.addReview(restaurantId, name, resource.getScore(), resource.getDescription());
         String url = "/restaurants/"+restaurantId+"/reviews/" + review.getId();
         return ResponseEntity.created(new URI(url))
