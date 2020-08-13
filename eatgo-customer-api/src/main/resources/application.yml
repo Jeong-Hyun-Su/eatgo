@@ -1,14 +1,15 @@
 spring:
+  profiles: mysql
   datasource:
-    jdbc-url: jdbc:mariadb://localhost:3306/eatgo
+    jdbc-url: jdbc:mariadb://${MYSQL_HOST}:3306/${MYSQL_DATABASE}
     driver-class-name: org.mariadb.jdbc.Driver
-    username: getDB
-    password: 1234
+    username: ${MYSQL_USER}
+    password: ${MYSQL_PASSWORD}
   jpa:
     open-in-view: false
     generate-ddl: true
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
 jwt:
   secret: 12345678901234567890123456789012
